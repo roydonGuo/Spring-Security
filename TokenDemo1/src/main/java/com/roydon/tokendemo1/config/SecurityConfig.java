@@ -53,6 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/login").anonymous()
                 // 下面资源，任何状态可访问 permitAll
 //                .antMatchers("/hello").permitAll()
+                // 配置权限
+                .antMatchers("/testCors").hasAuthority("system:dept:list")
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
 

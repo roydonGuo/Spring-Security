@@ -23,7 +23,11 @@ public class HelloController {
      * @return
      */
     @RequestMapping("/hello")
-    @PreAuthorize("hasAuthority('system:dept:list')")
+//    @PreAuthorize("hasAuthority('system:dept:list')") // 也可在配置类中配置
+//    @PreAuthorize("hasAnyAuthority('admin','test','system:dept:list')") // 只要用户有其中任意一个权限都可
+//    @PreAuthorize("hasRole('system:dept:list')") // 传入的参数拼接上 ROLE_
+//    @PreAuthorize("hasAnyRole('admin','system:dept:list')") // 接上 ROLE_ ,有任意的角色就可
+    @PreAuthorize("@myEx.hasAuthority('system:dept:list')") // 自定义权限校验,@myEx：获取容器中 name=myEx 的对象
     public String hello() {
         return "Hello World~";
     }
