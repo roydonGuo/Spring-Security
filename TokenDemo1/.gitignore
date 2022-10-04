@@ -1,4 +1,7 @@
 HELP.md
+mvnw
+mvnw.cmd
+TokenDemo1.iml
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
