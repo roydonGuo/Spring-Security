@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    /**
+     * 权限接口 /hello
+     * 所需权限：system:dept:list
+     *
+     * @return
+     */
     @RequestMapping("/hello")
     @PreAuthorize("hasAuthority('system:dept:list')")
     public String hello() {
