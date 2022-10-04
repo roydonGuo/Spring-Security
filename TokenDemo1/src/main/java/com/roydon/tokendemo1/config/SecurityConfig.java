@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 授权失败
                 .accessDeniedHandler(accessDeniedHandler);
 
-
+        http.cors();
     }
 
     @Bean
