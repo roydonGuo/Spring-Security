@@ -5,6 +5,7 @@ package com.roydon.tokendemo1.common;
  * Author: yi cheng
  * Date: 2022/9/28
  * Time: 18:51
+ * 同样可以使用 HttpStatus 枚举类
  **/
 public class CodeConstants {
 
