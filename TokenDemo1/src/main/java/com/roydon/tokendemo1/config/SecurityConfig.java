@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.CorsFilter;
 
 import javax.annotation.Resource;
 
@@ -39,6 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private AccessDeniedHandler accessDeniedHandler;
+
+    @Resource
+    private CorsFilter corsFilter;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -69,6 +73,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .accessDeniedHandler(accessDeniedHandler);
 
         http.cors();
+
+//        http.addFilterBefore(corsFilter,JwtAuthenticationTokenFilter.class);
+//        http.addFilterBefore(corsFilter, LogoutFilter.class);
     }
 
     @Bean
