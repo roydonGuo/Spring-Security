@@ -1,6 +1,5 @@
-package com.roydon.tokendemo1.config;
+package com.roydon.securitydemo3.config;
 
-import com.roydon.tokendemo1.filter.JwtAuthenticationTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,11 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.AuthenticationEntryPoint;
-import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import javax.annotation.Resource;
 
 /**
  * Created by Intellij IDEA
@@ -31,18 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Resource
-    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
-
-    @Resource
-    private AuthenticationEntryPoint authenticationEntryPoint;
-
-    @Resource
-    private AccessDeniedHandler accessDeniedHandler;
-
-//    @Resource
-//    private CorsFilter corsFilter;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -54,27 +36,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 对于登录接口 允许匿名访问 anonymous
                 .antMatchers("/user/login").anonymous()
-                // 下面资源，任何状态可访问 permitAll
-//                .antMatchers("/hello").permitAll()
-                // 配置权限
-                .antMatchers("/testCors").hasAuthority("system:dept:list")
-                // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
-
-        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-
-        // 配置异常处理器
-        http
-                .exceptionHandling()
-                // 认证失败处理
-                .authenticationEntryPoint(authenticationEntryPoint)
-                // 授权失败
-                .accessDeniedHandler(accessDeniedHandler);
 
         http.cors();
 
-//        http.addFilterBefore(corsFilter,JwtAuthenticationTokenFilter.class);
-//        http.addFilterBefore(corsFilter, LogoutFilter.class);
     }
 
     @Bean

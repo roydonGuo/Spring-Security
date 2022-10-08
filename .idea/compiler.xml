@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SecurityDemo3" />
         <module name="SecurityDemo2" />
         <module name="SecurityDemo1" />
         <module name="TokenDemo1" />
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="SecurityDemo1" target="1.8" />
       <module name="SecurityDemo2" target="1.8" />
+      <module name="SecurityDemo3" target="1.8" />
       <module name="TokenDemo1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -22,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SecurityDemo1" options="-parameters" />
       <module name="SecurityDemo2" options="-parameters" />
+      <module name="SecurityDemo3" options="-parameters" />
       <module name="TokenDemo1" options="-parameters" />
     </option>
   </component>

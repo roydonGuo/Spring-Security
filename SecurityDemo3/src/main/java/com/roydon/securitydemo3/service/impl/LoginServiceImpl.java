@@ -1,11 +1,11 @@
-package com.roydon.tokendemo1.service.impl;
+package com.roydon.securitydemo3.service.impl;
 
-import com.roydon.tokendemo1.common.ResponseResult;
-import com.roydon.tokendemo1.entity.LoginUser;
-import com.roydon.tokendemo1.entity.User;
-import com.roydon.tokendemo1.service.LoginServcie;
-import com.roydon.tokendemo1.utils.JwtUtil;
-import com.roydon.tokendemo1.utils.RedisCache;
+import com.roydon.securitydemo3.common.ResponseResult;
+import com.roydon.securitydemo3.entity.LoginUser;
+import com.roydon.securitydemo3.entity.User;
+import com.roydon.securitydemo3.service.LoginServcie;
+import com.roydon.securitydemo3.utils.JwtUtil;
+import com.roydon.securitydemo3.utils.RedisCache;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,8 +16,9 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Objects;
 
-import static com.roydon.tokendemo1.common.CodeConstants.CODE_200;
-import static com.roydon.tokendemo1.utils.RedisConstants.LOGIN_KEY;
+import static com.roydon.securitydemo3.common.CodeConstants.CODE_200;
+import static com.roydon.securitydemo3.utils.RedisConstants.LOGIN_KEY;
+
 
 @Service
 public class LoginServiceImpl implements LoginServcie {

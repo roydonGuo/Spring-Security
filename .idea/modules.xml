@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SecurityDemo1/SecurityDemo1.iml" filepath="$PROJECT_DIR$/SecurityDemo1/SecurityDemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/SecurityDemo2/SecurityDemo2.iml" filepath="$PROJECT_DIR$/SecurityDemo2/SecurityDemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecurityDemo3/SecurityDemo3.iml" filepath="$PROJECT_DIR$/SecurityDemo3/SecurityDemo3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Security.iml" filepath="$PROJECT_DIR$/.idea/Spring-Security.iml" />
       <module fileurl="file://$PROJECT_DIR$/TokenDemo1/TokenDemo1.iml" filepath="$PROJECT_DIR$/TokenDemo1/TokenDemo1.iml" />
     </modules>
