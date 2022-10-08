@@ -3,7 +3,7 @@ package com.roydon.tokendemo1.service.impl;
 import com.roydon.tokendemo1.common.ResponseResult;
 import com.roydon.tokendemo1.entity.LoginUser;
 import com.roydon.tokendemo1.entity.User;
-import com.roydon.tokendemo1.service.LoginServcie;
+import com.roydon.tokendemo1.service.LoginService;
 import com.roydon.tokendemo1.utils.JwtUtil;
 import com.roydon.tokendemo1.utils.RedisCache;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,7 +20,7 @@ import static com.roydon.tokendemo1.common.CodeConstants.CODE_200;
 import static com.roydon.tokendemo1.utils.RedisConstants.LOGIN_KEY;
 
 @Service
-public class LoginServiceImpl implements LoginServcie {
+public class LoginServiceImpl implements LoginService {
 
     @Resource
     private AuthenticationManager authenticationManager;

@@ -9,7 +9,7 @@ import com.roydon.securitydemo3.entity.User;
  * Date: 2022/10/4
  * Time: 16:10
  **/
-public interface LoginServcie {
+public interface LoginService {
 
     ResponseResult login(User user);
 
