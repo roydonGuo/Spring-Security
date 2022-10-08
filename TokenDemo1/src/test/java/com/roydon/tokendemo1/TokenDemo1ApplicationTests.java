@@ -25,18 +25,8 @@ class TokenDemo1ApplicationTests {
 
     @Test
     void pwdTest() {
-//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        // 随机盐加密
         String pwd1 = passwordEncoder.encode("123456");
-//        String pwd2 = passwordEncoder.encode("123456");
-//        String pwd3 = passwordEncoder.encode("qwer1234");
         System.out.println(pwd1);
-//        System.out.println(pwd2);
-//        System.out.println(pwd3);
-        // 明文密文比较
-//        boolean isPwd = passwordEncoder.matches("123456", "$2a$10$AHgfMmOZytlTztxhmAxdIOL1rfl7vTiBryYvlulm83xSRWhydSJB.");
-//        System.out.println("isPwd = " + isPwd);
-
     }
 
 
