@@ -32,7 +32,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Resource
     private MenuMapper menuMapper;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
